@@ -1,97 +1,348 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080d19">
-<title>GAMEVANTA | Emulator Download Center</title>
+<title>GAMEVANTA | BlueStacks Download Center</title>
+
 <style>
-:root{--green:#20df83;--red:#ff303b;--bg:#080d19;--panel:#121d31}
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0%,#17345b 0,#080d19 55%);color:#fff;font-family:Arial,Helvetica,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px}
-.container{width:100%;max-width:560px;padding:30px 24px;background:rgba(18,29,49,.96);border:1px solid #294365;border-radius:22px;box-shadow:0 18px 60px #0009;text-align:center}
-.brand{font-size:36px;font-weight:900;letter-spacing:2px;color:var(--green);margin:0}
-.tag{font-size:11px;letter-spacing:3px;color:#9db1cc;margin:7px 0 26px}
-h2{font-size:25px;margin:0 0 8px}
-.intro{color:#b9c8da;line-height:1.6;margin:0 auto 24px;max-width:430px}
-.step{background:#0c1729;border:1px solid #263e60;border-radius:16px;padding:22px 18px;margin:16px 0}
-.step h3{font-size:17px;margin:0 0 8px}
-.step p{font-size:13px;color:#aebed2;line-height:1.5;margin:0 0 15px}
-.btn{width:100%;border:0;border-radius:10px;padding:15px 18px;font-size:15px;font-weight:800;cursor:pointer;transition:transform .15s,background .3s,box-shadow .3s}
-.btn:active{transform:scale(.98)}
-.subscribe{background:var(--red);color:#fff;box-shadow:0 5px 20px #ff303b44}
-.subscribe:hover{background:#e92330}
-.unlock{background:#27354b;color:#dce7f5;border:1px solid #53657d}
-.unlock.ready{background:var(--green);color:#052012;border-color:var(--green);box-shadow:0 5px 22px #20df8355}
-.progress{height:8px;background:#26364d;border-radius:99px;overflow:hidden;margin-top:15px;display:none}
-.progress.show{display:block}
-.bar{height:100%;width:0;background:var(--green);border-radius:99px;transition:width 1.4s ease}
-.status{font-size:12px;color:#9db1cc;margin-top:12px;min-height:16px}
-.download{display:none;background:#20df83;color:#052012;text-decoration:none;margin-top:14px;padding:15px;border-radius:10px;font-weight:900}
-.download.show{display:block}
-.note{font-size:11px;color:#8394aa;line-height:1.5;margin:20px 4px 0}
-footer{font-size:11px;color:#71839c;margin-top:22px}
-.lock{font-size:23px;vertical-align:middle;margin-right:7px}
-@media(max-width:480px){.container{padding:25px 16px}.brand{font-size:31px}h2{font-size:22px}}
+:root {
+  --green: #20df83;
+  --red: #ff303b;
+  --bg: #080d19;
+  --panel: #121d31;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, #17345b, #080d19 65%);
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 570px;
+  padding: 30px 24px;
+  background: rgba(18,29,49,.97);
+  border: 1px solid #294365;
+  border-radius: 22px;
+  box-shadow: 0 18px 60px #0009;
+  text-align: center;
+}
+
+.brand {
+  font-size: 39px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--green);
+  margin: 0;
+}
+
+.tag {
+  color: #9db1cc;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin: 8px 0 28px;
+}
+
+h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.intro {
+  color: #b9c8da;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.step {
+  background: #0c1729;
+  border: 1px solid #263e60;
+  border-radius: 16px;
+  padding: 22px 18px;
+  margin: 18px 0;
+}
+
+.step h3 {
+  font-size: 17px;
+  margin-top: 0;
+}
+
+.step p {
+  color: #aebed2;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.subscribe {
+  background: var(--red);
+  color: white;
+}
+
+.unlock {
+  background: #27354b;
+  color: white;
+  border: 1px solid #53657d;
+}
+
+.unlock.ready {
+  background: var(--green);
+  color: #052012;
+}
+
+.progress {
+  display: none;
+  height: 8px;
+  background: #26364d;
+  border-radius: 20px;
+  margin-top: 18px;
+  overflow: hidden;
+}
+
+.progress.show {
+  display: block;
+}
+
+.bar {
+  width: 0;
+  height: 100%;
+  background: var(--green);
+  transition: width 1.5s ease;
+}
+
+.status {
+  font-size: 12px;
+  color: #9db1cc;
+  margin-top: 12px;
+}
+
+.download {
+  display: none;
+  background: var(--green);
+  color: #052012;
+  text-decoration: none;
+  padding: 17px 10px;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.download.show {
+  display: block;
+}
+
+.version {
+  color: #9db1cc;
+  font-size: 12px;
+  margin-top: 13px;
+}
+
+.note {
+  color: #8394aa;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 22px;
+}
+
+footer {
+  color: #71839c;
+  font-size: 11px;
+  margin-top: 24px;
+}
+
+@media(max-width:480px) {
+  .container {
+    padding: 24px 15px;
+  }
+  .brand {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 21px;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <main class="container">
+
   <h1 class="brand">GAMEVANTA</h1>
-  <div class="tag">YOUR GAMING DOWNLOAD CENTER</div>
-  <h2>🔥 BlueStacks for Low-End PC</h2>
-  <p class="intro">Looking for an Android emulator for your laptop or 4GB RAM PC? Follow the two steps below to continue.</p>
+
+  <div class="tag">
+    YOUR GAMING DOWNLOAD CENTER
+  </div>
+
+  <h2>🔥 BlueStacks 4 Download</h2>
+
+  <p class="intro">
+    Download BlueStacks 4 for your PC and laptop.
+    Follow the steps below to unlock your download.
+  </p>
 
   <section class="step">
+
     <h3>STEP 1 — SUBSCRIBE</h3>
-    <p>Open the GAMEVANTA YouTube channel. When you return to this page, continue to Step 2.</p>
-    <button class="btn subscribe" id="subscribeBtn" type="button">▶ SUBSCRIBE TO GAMEVANTA</button>
+
+    <p>
+      Visit our YouTube channel and support GAMEVANTA.
+    </p>
+
+    <button
+      class="btn subscribe"
+      id="subscribeBtn"
+      type="button">
+      ▶ SUBSCRIBE TO GAMEVANTA
+    </button>
+
   </section>
 
   <section class="step">
+
     <h3>STEP 2 — UNLOCK DOWNLOAD</h3>
-    <p>Return here and press the unlock button. The lock animation will open when the progress finishes.</p>
-    <button class="btn unlock" id="unlockBtn" type="button">
-      <span class="lock" id="lockIcon">🔒</span><span id="unlockText">UNLOCK DOWNLOAD</span>
+
+    <p>
+      Click the button below and wait for the download
+      unlock animation.
+    </p>
+
+    <button
+      class="btn unlock"
+      id="unlockBtn"
+      type="button">
+
+      <span id="lockIcon">🔒</span>
+      <span id="unlockText">UNLOCK DOWNLOAD</span>
+
     </button>
-    <div class="progress" id="progress"><div class="bar" id="bar"></div></div>
-    <div class="status" id="status" aria-live="polite">Waiting for you to unlock…</div>
-    <a class="download" id="downloadLink" href="https://www.bluestacks.com/" target="_blank" rel="noopener">⬇ DOWNLOAD BLUESTACKS — OFFICIAL WEBSITE</a>
+
+    <div class="progress" id="progress">
+      <div class="bar" id="bar"></div>
+    </div>
+
+    <div class="status" id="status">
+      Waiting for unlock...
+    </div>
+
+    <a
+      class="download"
+      id="downloadLink"
+      href="https://github.com/Asad07860786/freefire-emuloter-low-and-divce/releases/download/bluestacks-4.240.30.1002/BlueStacks-Installer_4.240.30.1002_amd64_native.exe">
+
+      ⬇ DOWNLOAD BLUESTACKS 4
+
+    </a>
+
+    <div class="version">
+      Version 4.240.30.1002 | 64-bit
+    </div>
+
   </section>
 
-  <p class="note">Note: The unlock animation is a simple visitor flow. It does not verify whether someone has subscribed. BlueStacks download opens the official BlueStacks website.</p>
-  <footer>© 2026 GAMEVANTA</footer>
-</main>
-<script>
-const CHANNEL_URL = "https://www.youtube.com/@GameVanta-fun";
-const subscribeBtn = document.getElementById("subscribeBtn");
-const unlockBtn = document.getElementById("unlockBtn");
-const progress = document.getElementById("progress");
-const bar = document.getElementById("bar");
-const statusText = document.getElementById("status");
-const lockIcon = document.getElementById("lockIcon");
-const unlockText = document.getElementById("unlockText");
-const downloadLink = document.getElementById("downloadLink");
+  <p class="note">
+    Note: The unlock animation does not verify YouTube
+    subscriptions. Download is hosted through GitHub Releases.
+    Check your PC compatibility before installing.
+  </p>
 
-subscribeBtn.addEventListener("click", () => {
+  <footer>
+    © 2026 GAMEVANTA | All Rights Reserved
+  </footer>
+
+</main>
+
+<script>
+
+const CHANNEL_URL =
+"https://www.youtube.com/@GameVanta-fun";
+
+const subscribeBtn =
+document.getElementById("subscribeBtn");
+
+const unlockBtn =
+document.getElementById("unlockBtn");
+
+const progress =
+document.getElementById("progress");
+
+const bar =
+document.getElementById("bar");
+
+const status =
+document.getElementById("status");
+
+const lockIcon =
+document.getElementById("lockIcon");
+
+const unlockText =
+document.getElementById("unlockText");
+
+const downloadLink =
+document.getElementById("downloadLink");
+
+subscribeBtn.addEventListener("click", function() {
   window.open(CHANNEL_URL, "_blank", "noopener");
 });
 
-unlockBtn.addEventListener("click", () => {
+unlockBtn.addEventListener("click", function() {
+
   if (unlockBtn.classList.contains("ready")) return;
+
   unlockBtn.disabled = true;
+
   progress.classList.add("show");
-  statusText.textContent = "Unlocking your download…";
-  requestAnimationFrame(() => { bar.style.width = "100%"; });
-  window.setTimeout(() => {
+
+  status.textContent = "Unlocking your download...";
+
+  requestAnimationFrame(function() {
+    bar.style.width = "100%";
+  });
+
+  window.setTimeout(function() {
+
     unlockBtn.classList.add("ready");
+
     lockIcon.textContent = "🔓";
+
     unlockText.textContent = "DOWNLOAD UNLOCKED";
-    statusText.textContent = "Success! Your download is ready.";
+
+    status.textContent = "Success! Your download is ready.";
+
     downloadLink.classList.add("show");
+
     unlockBtn.disabled = false;
+
   }, 1500);
+
 });
+
 </script>
+
 </body>
 </html>
