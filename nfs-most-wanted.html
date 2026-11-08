@@ -1,1 +1,125 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAMEVANTA | NFS Most Wanted</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#080d16;color:white;
+ font-family:Arial,sans-serif;text-align:center;
+ padding:20px;
+}
+.container{
+ max-width:650px;margin:30px auto;
+ background:#111d2d;border:1px solid #344b63;
+ border-radius:20px;padding:25px;
+ box-shadow:0 0 35px #000;
+}
+.brand{font-size:38px;color:#20ed8b;font-weight:900}
+.tag{color:#a7b6c8;letter-spacing:3px;font-size:11px}
+.hero{
+ margin:25px 0;padding:65px 10px;
+ border-radius:15px;
+ background:linear-gradient(#0005,#000b),
+ url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1000")
+ center/cover;
+}
+.hero h1{font-size:28px;text-shadow:2px 2px 5px black}
+.hero p{font-weight:bold;text-shadow:1px 1px 5px black}
+.nft{font-size:65px;margin:20px 0}
+.step{
+ background:#091421;border:1px solid #30445c;
+ border-radius:14px;padding:22px;margin-top:20px;
+}
+button,.download{
+ display:block;width:100%;padding:16px;
+ border:0;border-radius:9px;font-weight:900;
+ font-size:15px;cursor:pointer;text-decoration:none;
+ margin-top:15px;
+}
+.subscribe{background:#f52d42;color:white}
+.unlock{background:#263d56;color:white}
+.download{background:#20ed8b;color:#061c12;display:none}
+.progress{height:8px;background:#26364b;border-radius:10px;
+ margin-top:18px;display:none;overflow:hidden}
+.bar{height:100%;width:0;background:#20ed8b;transition:width 1.5s}
+.status{font-size:13px;color:#a9bbcf;margin-top:12px}
+footer{color:#8596a9;font-size:11px;margin-top:25px}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="brand">GAMEVANTA</div>
+<div class="tag">NEXT LEVEL GAMING!</div>
+
+<div class="hero">
+<h1>NEED FOR SPEED</h1>
+<h1>MOST WANTED 2005</h1>
+<p>THE ULTIMATE STREET RACING EXPERIENCE</p>
+</div>
+
+<div class="nft">😎🏎️</div>
+<h2>DOWNLOAD CENTER</h2>
+<p>Follow the steps to unlock your download.</p>
+
+<div class="step">
+<h3>STEP 1 — SUBSCRIBE</h3>
+<p>Support GAMEVANTA on YouTube!</p>
+<button class="subscribe" onclick="window.open('https://www.youtube.com/@GameVanta-fun','_blank')">
+▶ SUBSCRIBE TO GAMEVANTA
+</button>
+</div>
+
+<div class="step">
+<h3>STEP 2 — UNLOCK DOWNLOAD</h3>
+<p>Click below to unlock the download button.</p>
+<button class="unlock" id="unlock" onclick="unlockDownload()">
+🔒 UNLOCK DOWNLOAD
+</button>
+<div class="progress" id="progress">
+<div class="bar" id="bar"></div>
+</div>
+<div class="status" id="status">Waiting for unlock...</div>
+
+<a class="download" id="download"
+href="https://www.mediafire.com/file/cu0l04c3wwbeir3/Need_For_Speed_Most_Wanted_Win_Setup_EN.zip/file?action=check"
+target="_blank" rel="noopener">
+⬇ OPEN DOWNLOAD
+</a>
+</div>
+
+<p style="font-size:11px;color:#91a1b5;margin-top:20px">
+The unlock animation does not verify YouTube subscriptions.
+Only download and share game files you are authorized to distribute.
+</p>
+
+<footer>© 2026 GAMEVANTA | Next Level Gaming!</footer>
+</div>
+
+<script>
+function unlockDownload(){
+ const btn=document.getElementById("unlock");
+ if(btn.disabled)return;
+ btn.disabled=true;
+ document.getElementById("progress").style.display="block";
+ document.getElementById("status").textContent="Unlocking...";
+ requestAnimationFrame(()=>{
+ document.getElementById("bar").style.width="100%";
+ });
+ setTimeout(()=>{
+ btn.textContent="🔓 DOWNLOAD UNLOCKED";
+ btn.style.background="#20ed8b";
+ btn.style.color="#061c12";
+ document.getElementById("status").textContent="Success! Download is ready.";
+ document.getElementById("download").style.display="block";
+ btn.disabled=false;
+ },1500);
+}
+</script>
+</body>
+</html>
+
