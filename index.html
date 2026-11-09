@@ -1,348 +1,92 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080d19">
-<title>GAMEVANTA | BlueStacks Download Center</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07110f">
+<meta name="description" content="GAMEVANTA — gaming downloads, guides and PC game recommendations.">
+<title>GAMEVANTA | Gaming Download Center</title>
 <style>
-:root {
-  --green: #20df83;
-  --red: #ff303b;
-  --bg: #080d19;
-  --panel: #121d31;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: radial-gradient(circle at 50% 0%, #17345b, #080d19 65%);
-  color: white;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.container {
-  width: 100%;
-  max-width: 570px;
-  padding: 30px 24px;
-  background: rgba(18,29,49,.97);
-  border: 1px solid #294365;
-  border-radius: 22px;
-  box-shadow: 0 18px 60px #0009;
-  text-align: center;
-}
-
-.brand {
-  font-size: 39px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  color: var(--green);
-  margin: 0;
-}
-
-.tag {
-  color: #9db1cc;
-  font-size: 11px;
-  letter-spacing: 3px;
-  margin: 8px 0 28px;
-}
-
-h2 {
-  font-size: 25px;
-  margin-bottom: 10px;
-}
-
-.intro {
-  color: #b9c8da;
-  line-height: 1.6;
-  font-size: 14px;
-}
-
-.step {
-  background: #0c1729;
-  border: 1px solid #263e60;
-  border-radius: 16px;
-  padding: 22px 18px;
-  margin: 18px 0;
-}
-
-.step h3 {
-  font-size: 17px;
-  margin-top: 0;
-}
-
-.step p {
-  color: #aebed2;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.btn {
-  width: 100%;
-  border: none;
-  border-radius: 10px;
-  padding: 16px;
-  font-size: 14px;
-  font-weight: 900;
-  cursor: pointer;
-  margin-top: 8px;
-}
-
-.subscribe {
-  background: var(--red);
-  color: white;
-}
-
-.unlock {
-  background: #27354b;
-  color: white;
-  border: 1px solid #53657d;
-}
-
-.unlock.ready {
-  background: var(--green);
-  color: #052012;
-}
-
-.progress {
-  display: none;
-  height: 8px;
-  background: #26364d;
-  border-radius: 20px;
-  margin-top: 18px;
-  overflow: hidden;
-}
-
-.progress.show {
-  display: block;
-}
-
-.bar {
-  width: 0;
-  height: 100%;
-  background: var(--green);
-  transition: width 1.5s ease;
-}
-
-.status {
-  font-size: 12px;
-  color: #9db1cc;
-  margin-top: 12px;
-}
-
-.download {
-  display: none;
-  background: var(--green);
-  color: #052012;
-  text-decoration: none;
-  padding: 17px 10px;
-  border-radius: 10px;
-  font-weight: 900;
-  font-size: 14px;
-  margin-top: 16px;
-}
-
-.download.show {
-  display: block;
-}
-
-.version {
-  color: #9db1cc;
-  font-size: 12px;
-  margin-top: 13px;
-}
-
-.note {
-  color: #8394aa;
-  font-size: 11px;
-  line-height: 1.6;
-  margin-top: 22px;
-}
-
-footer {
-  color: #71839c;
-  font-size: 11px;
-  margin-top: 24px;
-}
-
-@media(max-width:480px) {
-  .container {
-    padding: 24px 15px;
-  }
-  .brand {
-    font-size: 32px;
-  }
-  h2 {
-    font-size: 21px;
-  }
-}
+:root{--bg:#07110f;--panel:#101e1a;--line:#203b32;--green:#7cffb2;--muted:#a9bbb3;--white:#f4fff8;--orange:#ffb45b}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 80% 0%,#163b2b 0,transparent 38%),linear-gradient(145deg,#07110f,#0a151b 65%,#101a16);color:var(--white);font-family:Inter,Segoe UI,Arial,sans-serif;min-height:100vh}
+a{color:inherit} .wrap{width:min(1080px,92%);margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid #ffffff13}
+.brand{font-weight:1000;letter-spacing:2px;font-size:25px} .brand span{color:var(--green)}
+nav{display:flex;gap:22px;font-size:13px;color:var(--muted)} nav a{text-decoration:none} nav a:hover{color:var(--green)}
+.hero{padding:76px 0 48px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.eyebrow{color:var(--green);font-size:12px;letter-spacing:3px;font-weight:800}
+h1{font-size:clamp(42px,7vw,76px);line-height:.98;margin:15px 0 18px;letter-spacing:-3px}
+h1 em{font-style:normal;color:var(--green)} .lead{max-width:570px;color:var(--muted);font-size:17px;line-height:1.7}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 21px;border-radius:12px;text-decoration:none;font-weight:900;font-size:14px;transition:.2s;border:1px solid transparent}
+.btn:hover{transform:translateY(-2px)} .primary{background:var(--green);color:#07130d;box-shadow:0 10px 35px #7cffb229}
+.secondary{border-color:#416052;background:#12221c;color:var(--white)}
+.art{min-height:310px;border:1px solid #315446;border-radius:26px;background:linear-gradient(145deg,#173b2b,#0e1b1a 55%,#182a25);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:0 25px 70px #0008}
+.art:before,.art:after{content:"";position:absolute;border:1px solid #7cffb22a;border-radius:50%;width:330px;height:330px}
+.art:after{width:230px;height:230px}
+.rv{position:relative;z-index:1;text-align:center;padding:28px}
+.rv .emoji{font-size:92px;filter:drop-shadow(0 12px 20px #0009)}
+.rv strong{display:block;font-size:30px;letter-spacing:1px;margin-top:12px} .rv small{color:var(--green);letter-spacing:3px;font-weight:800}
+.section{padding:30px 0 70px} .section-title{font-size:27px;margin:0 0 9px} .sub{color:var(--muted);line-height:1.6;margin:0 0 24px}
+.card{background:linear-gradient(145deg,#12241d,#0d1918);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 18px 50px #0003}
+.game-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.tag{font-size:11px;letter-spacing:1.5px;color:var(--green);font-weight:900;border:1px solid #3e765a;border-radius:99px;padding:8px 11px}
+.game-title{font-size:31px;margin:0 0 9px} .game-desc{color:var(--muted);line-height:1.65;max-width:700px}
+.notice{margin-top:20px;padding:14px 16px;border-radius:12px;background:#332717;border:1px solid #6b512c;color:#ffe0ae;font-size:13px;line-height:1.55}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.step{padding:18px;border:1px solid var(--line);border-radius:14px;background:#0b1714}
+.step b{color:var(--green);font-size:12px;letter-spacing:1px} .step p{color:var(--muted);font-size:13px;line-height:1.55;margin-bottom:0}
+footer{border-top:1px solid #ffffff14;padding:24px 0 36px;color:#82958b;font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:52px}nav{gap:12px}.steps{grid-template-columns:1fr}.art{min-height:240px}}
+@media(max-width:460px){header{align-items:flex-start;gap:14px;flex-direction:column}h1{letter-spacing:-2px}.btn{width:100%}}
 </style>
 </head>
-
 <body>
-
-<main class="container">
-
-  <h1 class="brand">GAMEVANTA</h1>
-
-  <div class="tag">
-    YOUR GAMING DOWNLOAD CENTER
+<div class="wrap">
+<header>
+  <div class="brand">GAME<span>VANTA</span></div>
+  <nav><a href="#games">Downloads</a><a href="https://www.youtube.com/@GameVanta-fun" target="_blank" rel="noopener">YouTube</a></nav>
+</header>
+<main>
+<section class="hero">
+  <div>
+    <div class="eyebrow">NEXT LEVEL GAMING</div>
+    <h1>PLAY MORE.<br><em>LEVEL UP.</em></h1>
+    <p class="lead">Welcome to GAMEVANTA — your gaming hub for game downloads, low-end PC guides, updates and recommendations.</p>
+    <div class="actions">
+      <a class="btn primary" href="#games">EXPLORE DOWNLOADS ↓</a>
+      <a class="btn secondary" href="https://www.youtube.com/@GameVanta-fun" target="_blank" rel="noopener">▶ SUBSCRIBE</a>
+    </div>
   </div>
-
-  <h2>🔥 BlueStacks 4 Download</h2>
-
-  <p class="intro">
-    Download BlueStacks 4 for your PC and laptop.
-    Follow the steps below to unlock your download.
-  </p>
-
-  <section class="step">
-
-    <h3>STEP 1 — SUBSCRIBE</h3>
-
-    <p>
-      Visit our YouTube channel and support GAMEVANTA.
-    </p>
-
-    <button
-      class="btn subscribe"
-      id="subscribeBtn"
-      type="button">
-      ▶ SUBSCRIBE TO GAMEVANTA
-    </button>
-
-  </section>
-
-  <section class="step">
-
-    <h3>STEP 2 — UNLOCK DOWNLOAD</h3>
-
-    <p>
-      Click the button below and wait for the download
-      unlock animation.
-    </p>
-
-    <button
-      class="btn unlock"
-      id="unlockBtn"
-      type="button">
-
-      <span id="lockIcon">🔒</span>
-      <span id="unlockText">UNLOCK DOWNLOAD</span>
-
-    </button>
-
-    <div class="progress" id="progress">
-      <div class="bar" id="bar"></div>
+  <div class="art" aria-label="GAMEVANTA gaming artwork">
+    <div class="rv"><div class="emoji">🚐🌲</div><strong>RV THERE YET?</strong><small>ROAD TRIP • CO-OP • CHAOS</small></div>
+  </div>
+</section>
+<section class="section" id="games">
+  <h2 class="section-title">Featured download</h2>
+  <p class="sub">A quick link to the RV There Yet? download shared for this GAMEVANTA page.</p>
+  <article class="card">
+    <div class="game-top">
+      <div><div class="tag">FEATURED GAME</div><h3 class="game-title">RV There Yet?</h3></div>
+      <div class="tag">PC GAME</div>
     </div>
-
-    <div class="status" id="status">
-      Waiting for unlock...
+    <p class="game-desc">Get ready for a chaotic road trip. Use the download button for the link supplied earlier, or visit the official Steam listing to check the game's current availability, price and system requirements.</p>
+    <div class="links">
+      <a class="btn primary" href="https://tunnel5.dlproxy.uk/download/ag1.eyJhcyI6MTUwNzUwLCJjIjoiQU41WUMybVpzcnY4bTBuLWEyckExVzFUaE5VMW9yeHFWVDY4Z1liaHhMUU9JbWlCVHdUT2ZsODZrUkF6cnBCcl9iZHR5ajVHNnk3OEF1N3R2LTdoTW1uLXp1TjdLY2FUQm5FSTdWcDNtLW1rRDh3d1dtM3dtc2JrMkpDcDdvTGtOaWR6SlhoMVB1Q29EZnlCRkZFX00ySkJyaFUxbk5oQ1pqNDg5VlFBU2FPalB2ZmhKVEFYeWRfSUtBRGc5MGNOT3U2VzJMOGh0NElhYzlydG9KMjhHNkxLZ25WOWlyejNSa0ZHeFB2T1RDdHFXTER1V18xb0kxekN2ZGlzZTExUzRrVlk4SUZyRFpVRGFhbWxyRktkWDh2dmo5dGRjZkxKNFhGMGMzU0tUazZPWmpRU210WHprMXBwWkxZakJ3RW9XRUpXQ1RCWE0yT0MtejY2dFJOeC1UNkFHZXI5Q01VbFU5Z3czdEhta3htVWswdmY4WkYtREVWckpWRnVRZk9rIiwiZiI6NDczOTM2LCJpIjoxNzk0MjA4NzAyLCJpcCI6IjE1NC4yMDguNTcuMTIiLCJqIjoiY1luMDBwQTVFdG9FS1M1dSIsImsiOjEsInQiOiJlIiwidiI6MSwieCI6MTc5NDIzMDMwMn0.9tsGkkjbwBbX3XJ6YwngeZWkdYQ7sqW_h-nSynWQh8V6JesfL92GwO_6dnaG3fOo-F6ysgSfWtZPnRBJSYdWAA" target="_blank" rel="noopener noreferrer">⬇ DOWNLOAD RV THERE YET</a>
+      <a class="btn secondary" href="https://store.steampowered.com/app/3949040/RV_There_Yet/" target="_blank" rel="noopener noreferrer">VIEW OFFICIAL STEAM PAGE ↗</a>
     </div>
-
-    <a
-      class="download"
-      id="downloadLink"
-      href="https://github.com/Asad07860786/freefire-emuloter-low-and-divce/releases/download/bluestacks-4.240.30.1002/BlueStacks-Installer_4.240.30.1002_amd64_native.exe">
-
-      ⬇ DOWNLOAD BLUESTACKS 4
-
-    </a>
-
-    <div class="version">
-      Version 4.240.30.1002 | 64-bit
+    <div class="notice"><strong>Download note:</strong> The first button uses the temporary tunnel link shared earlier. It may expire or stop working. I have not independently verified the file's safety or availability; scan downloaded files with antivirus and use the official Steam page if the link fails.</div>
+    <div class="steps">
+      <div class="step"><b>01 / CHOOSE</b><p>Open the download link or the official Steam listing.</p></div>
+      <div class="step"><b>02 / CHECK</b><p>Confirm the file, publisher and PC requirements before installing.</p></div>
+      <div class="step"><b>03 / PLAY</b><p>Enjoy the game and visit GAMEVANTA for more guides.</p></div>
     </div>
-
-  </section>
-
-  <p class="note">
-    Note: The unlock animation does not verify YouTube
-    subscriptions. Download is hosted through GitHub Releases.
-    Check your PC compatibility before installing.
-  </p>
-
-  <footer>
-    © 2026 GAMEVANTA | All Rights Reserved
-  </footer>
-
+  </article>
+</section>
 </main>
-
-<script>
-
-const CHANNEL_URL =
-"https://www.youtube.com/@GameVanta-fun";
-
-const subscribeBtn =
-document.getElementById("subscribeBtn");
-
-const unlockBtn =
-document.getElementById("unlockBtn");
-
-const progress =
-document.getElementById("progress");
-
-const bar =
-document.getElementById("bar");
-
-const status =
-document.getElementById("status");
-
-const lockIcon =
-document.getElementById("lockIcon");
-
-const unlockText =
-document.getElementById("unlockText");
-
-const downloadLink =
-document.getElementById("downloadLink");
-
-subscribeBtn.addEventListener("click", function() {
-  window.open(CHANNEL_URL, "_blank", "noopener");
-});
-
-unlockBtn.addEventListener("click", function() {
-
-  if (unlockBtn.classList.contains("ready")) return;
-
-  unlockBtn.disabled = true;
-
-  progress.classList.add("show");
-
-  status.textContent = "Unlocking your download...";
-
-  requestAnimationFrame(function() {
-    bar.style.width = "100%";
-  });
-
-  window.setTimeout(function() {
-
-    unlockBtn.classList.add("ready");
-
-    lockIcon.textContent = "🔓";
-
-    unlockText.textContent = "DOWNLOAD UNLOCKED";
-
-    status.textContent = "Success! Your download is ready.";
-
-    downloadLink.classList.add("show");
-
-    unlockBtn.disabled = false;
-
-  }, 1500);
-
-});
-
-</script>
-
+<footer><span>© 2026 GAMEVANTA · NEXT LEVEL GAMING!</span><span>Gaming guides • Downloads • Reviews</span></footer>
+</div>
 </body>
 </html>
